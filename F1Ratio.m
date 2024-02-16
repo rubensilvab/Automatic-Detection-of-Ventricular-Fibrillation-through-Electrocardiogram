@@ -48,4 +48,3 @@ ratio2 = npretos2 / totalpixeis2;
 
 F1 = ratio2 - ratio1;  % Extracted Metric
 
-end
