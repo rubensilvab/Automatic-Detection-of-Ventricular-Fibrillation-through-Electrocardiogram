@@ -43,12 +43,12 @@ NVF = length(ecgVF);
 [ecg_jane, freq_fundamentaisVF, potenciaVF, freq_mediasVF, F1VF] = windows(ecgVF, fa, tj);
 
 % ECG VF - METRIC N OF TCSC
-[ecgj3tcscVF] = TCSCjan2(ecgVF, fa); % window with 1-second step, i.e., 75% overlap
+[ecgj3tcscVF] = TCSCwindow(ecgVF, fa); % window with 1-second step, i.e., 75% overlap
 
 [ecgbin, NtcscVF] = TCSCconvert_binary(ecgj3tcscVF, fa);
 
 % CONTROL ECG - METRIC N OF TCSC
-[ecgj3tcscC] = TCSCjan2(ecgc, fa); % window with 1-second step, i.e., 75% overlap
+[ecgj3tcscC] = TCSCwindow(ecgc, fa); % window with 1-second step, i.e., 75% overlap
 
 [ecgbin, NtcscC] = TCSCconvert_binary(ecgj3tcscC, fa);
 
