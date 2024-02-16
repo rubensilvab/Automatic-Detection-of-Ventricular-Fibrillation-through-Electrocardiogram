@@ -2,6 +2,16 @@
 
 Please be aware that numerous variations and experiments were conducted during this study. However, only the automatic method that yielded the most favorable outcome has been included in this summary of the work. To access the entire study, please read the full [report](Projeto_Rúben_93203.pdf) (portuguese).
 
-## Summary
+## Motivation
 
-In Portugal, about one-third of annual deaths are attributed to cardiovascular diseases, which raises particular concern in this area. Therefore, this work is based on the construction of an algorithm capable of detecting ventricular fibrillation by exploiting ECG characteristics. To achieve this goal, the signal underwent preprocessing and analysis of 5 metrics described in existing literature. The analysis of these metrics independently allowed for an evaluation of their description of the pathology. However, a multivariable analysis will enhance the discriminatory power of these metrics. In a second approach, an unsupervised learning algorithm was implemented to verify how the metrics grouped, allowing for discrimination of the pathology. This analysis was primarily useful for studying the influence of the metrics on the overall model performance. As the ultimate goal of this work is the automatic identification of ventricular fibrillation events, a supervised learning algorithm was also implemented, where (considering the metrics previously found to be discriminatory of the condition) results of (92 ± 0.11)% and (87 ± 0.10)% were obtained for sensitivity and specificity, respectively. The results obtained were in line with those reported in the literature.
+According to the National Health Service (SNS), heart diseases continue to be the leading cause of death in Portugal, accounting for more than 35 thousand annual deaths in our country. These numbers reflect about one-third of the total annual national mortalities, highlighting an extreme concern in this area. 
+Nevertheless, the inevitability of these cardiac problems occurring compels society to seek new solutions to prevent further fatal cases. Ventricular fibrillation is an emergency condition where the heart rate is uncontrolled and extremely high. Therefore, this work is based on the construction of an algorithm capable of detecting ventricular fibrillation by exploiting ECG characteristics. 
+
+## Goals
+- **Description**: Clearly describe the purpose of the repository.
+
+
+## Methods
+
+### Dataset 
+
