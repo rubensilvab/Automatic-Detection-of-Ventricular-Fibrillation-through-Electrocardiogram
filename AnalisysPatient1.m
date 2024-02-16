@@ -154,7 +154,7 @@ xlabel('Time in seconds')
 title('All the ECG Control')
 
 % ECG Control - View Average Frequency, Fundamental Frequency, Power, with Windows
-[ecg_jane,freq_fundamentaisC,PowerC,freq_mediasC,F1C]=janelas(ecgc,fa,tj,tc);
+[ecg_jane,freq_fundamentaisC,PowerC,freq_mediasC,F1C]=windows(ecgc,fa,tj,tc);
 
 
 figure()
@@ -189,7 +189,7 @@ plot(tVF, ecgVF)
 xlabel('Time in seconds')
 title('All the segments with Fibrillation')
 
-[ecg_jane, freq_fundamentaisVF, PowerVF, freq_mediasVF, F1VFF] = janelas(ecgVF, fa, tj, tVF);
+[ecg_jane, freq_fundamentaisVF, PowerVF, freq_mediasVF, F1VFF] = windows(ecgVF, fa, tj, tVF);
 
 figure()
 plot([0:length(freq_mediasVF)-1]*0.5*tj+tVF(1), freq_mediasVF)
