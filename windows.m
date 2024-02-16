@@ -39,6 +39,6 @@ for i = 2:length(L)
         freq_med(:,i-1) = sum(NormS(:,i-1) .* fw);
         
         % F1-RATIO Phase Image
-        [F1(:,i-1)] = convert_graph_to_binary(ecg(:,i-1));
+        [F1(:,i-1)] = F1Ratio(ecg(:,i-1));
     end
 end
