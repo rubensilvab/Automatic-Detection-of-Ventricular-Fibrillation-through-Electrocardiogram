@@ -246,7 +246,7 @@ ylabel('F1 (ratio -> number of black pixels / total pixels)')
 % TCSC Algoritm
 
 %ECG -Control
-[ecgj3tcsc]=TCSCjan2(ecgc,fa) % window with 1s-step , so 75% overlap
+[ecgj3tcsc]=TCSCwindow(ecgc,fa) % window with 1s-step , so 75% overlap
 figure()
 plot(ecgj3tcsc(:,15)),hold on , yline(0.2,'--','V0'),yline(-0.2,'--','V0') 
 
@@ -280,7 +280,7 @@ xlabel('start in s of each window')
 ylabel('N(%)')
 
 %ECG -VF
-[ecgj3tcsc]=TCSCjan2(ecgVF,fa) % window with 1s-step , so 75% overlap
+[ecgj3tcsc]=TCSCwindow(ecgVF,fa) % window with 1s-step , so 75% overlap
 figure()
 plot(ecgj3tcsc(:,15)),hold on , yline(0.2,'--','V0'),yline(-0.2,'--','V0') 
 
