@@ -1,4 +1,4 @@
-function[ecg]=TCSCjan2(yecg1,fa)
+function[ecg]=TCSCwindow(yecg1,fa)
 
 %Input  yecg1->ECG (1,SamplesECG)
 %       fa-> sample frequency
