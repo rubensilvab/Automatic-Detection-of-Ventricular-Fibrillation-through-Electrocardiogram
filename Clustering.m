@@ -1,9 +1,9 @@
 clear all
 close all
 clc
-% VALORES PARA A MÉDIANA DOS BOXPLOTS DE CADA PACIENTE PARA CADA MÉTRICA
-% com janelas de 10s
-% CADA COLUNA CORRESPONDE A UM PACIENTE
+% Values for the median of the boxplots for each patient for each metric
+% with 10-second windows
+% Each column corresponds to one patient
 
 
 ffsC=[2,2.50000000000000,1.50000000000000,4,6.50000000000000,2.50000000000000,2.50000000000000,1.50000000000000,6.50000000000000,2,3,1,1.50000000000000,3.50000000000000,4.50000000000000,1.50000000000000,5.50000000000000,6,2.50000000000000,2.50000000000000,2,1,1.50000000000000,1.50000000000000,1];
@@ -22,34 +22,34 @@ mediaF1VF=[0.0548639455782313,0.0498214285714286,0.0500425170068027,0.0508715986
 
 % CLUSTERING
 
-%TODAS AS MÉTRICAS
-%X=[ffsC',pwsC',mediaNTSCSCC',mediaF1C';ffsF',pwsF',mediaNTSCSCVF',mediaF1VF'];
+% ALL METRICS
+% X = [ffsC', pwsC', mediaNTSCSCC', mediaF1C'; ffsF', pwsF', mediaNTSCSCVF', mediaF1VF'];
 
-%TODAS AS MÉTRICAS MENOS POTENCIA
-X=[ffsC',mediaNTSCSCC',mediaF1C';ffsF',mediaNTSCSCVF',mediaF1VF'];
+% ALL METRICS EXCEPT POWER
+X = [ffsC', mediaNTSCSCC', mediaF1C'; ffsF', mediaNTSCSCVF', mediaF1VF'];
 
-%TODAS AS MÉTRICAS MENOS FREQUENCIA FUNDAMENTAL
-%X=[pwsC',mediaNTSCSCC',mediaF1C';pwsF',mediaNTSCSCVF',mediaF1VF'];
+% ALL METRICS EXCEPT FUNDAMENTAL FREQUENCY
+% X = [pwsC', mediaNTSCSCC', mediaF1C'; pwsF', mediaNTSCSCVF', mediaF1VF'];
 
-%TODAS AS MÉTRICAS MENOS FREQUENCIA FUNDAMENTAL E POTENCIA
-%X=[mediaNTSCSCC',mediaF1C';mediaNTSCSCVF',mediaF1VF'];
+% ALL METRICS EXCEPT FUNDAMENTAL FREQUENCY AND POWER
+% X = [mediaNTSCSCC', mediaF1C'; mediaNTSCSCVF', mediaF1VF'];
 
-%TODAS AS MÉTRICAS MENOS F1 E POTENCIA
-%X=[ffsC',mediaNTSCSCC';ffsF',mediaNTSCSCVF'];
+% ALL METRICS EXCEPT F1 AND POWER
+% X = [ffsC', mediaNTSCSCC'; ffsF', mediaNTSCSCVF'];
 
-%Apenas N(%)
-%X=[mediaNTSCSCC';mediaNTSCSCVF'];
+% Only N(%)
+% X = [mediaNTSCSCC'; mediaNTSCSCVF'];
 
-%Apenas F1
-%X=[mediaF1C';mediaF1VF'];
+% Only F1
+% X = [mediaF1C'; mediaF1VF'];
 
-% %Apenas FF:
-% X=[ffsC';ffsF'];
+% Only FF:
+% X = [ffsC'; ffsF'];
 
-%Apenas potencia
-%X=[pwsC';pwsF'];
+% Only power
+% X = [pwsC'; pwsF'];
 
-%Normalização das métricas
+% Metric normalization
 
 for i=1:length(X(1,:))
     X(:,i)=(X(:,i)-min(X(:,i)))/(max(X(:,i))-min(X(:,i)))
@@ -77,7 +77,7 @@ end
 
 [c,cm,ind,per] = confusion(truelabel',predict')
         
-plotconfusion(truelabel',predict','Previsões com N(%) e FF [0-Sem fibrilação ; 1-Com Fribrilação]')
+plotconfusion(truelabel', predict', 'Predictions with N(%) and FF [0-No fibrillation; 1-With fibrillation]')
 
 % 
 % % Hierarquial Clustering
@@ -100,6 +100,6 @@ end
 
 [c,cm,ind,per] = confusion(truelabel',predicth')
         
-plotconfusion(truelabel',predicth','Previsões com N(%)e FF [0-Sem fibrilação ; 1-Com Fribrilação], Hierarquial Clustering')
+plotconfusion(truelabel', predicth', 'Predictions with N(%) and FF [0-No fibrillation; 1-With fibrillation], Hierarchical Clustering')
 
 
