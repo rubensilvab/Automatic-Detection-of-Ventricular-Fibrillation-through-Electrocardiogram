@@ -1,6 +1,17 @@
 
 function[freq_fundamentaisC,potenciaC,freq_mediasC,freq_fundamentaisVF,potenciaVF,freq_mediasVF,NtcscVF,NtcscC,F1C,F1VF]=boxplotecg01(ecg1,fa,tj,segm)
 
+%Input   ecg1 ->
+%        fa ->
+%        tj ->
+%        segm ->
+
+%Output   freq_fundamentaisC,freq_mediasC,
+%         freq_fundamentaisVF,freq_mediasVF
+%         potenciaC,potenciaVF
+%         NtcscVF,NtcscC
+%         F1C,F1VF
+
 [yecg1,t]=pre_process(ecg1,fa); % pre-processamento
 
 %TODO ECG:
