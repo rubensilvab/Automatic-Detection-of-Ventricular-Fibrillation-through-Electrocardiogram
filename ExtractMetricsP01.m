@@ -37,10 +37,10 @@ NVF = length(ecgVF);
 % tj - time of each window in seconds
 
 % CONTROL ECG - Extract AVERAGE FREQUENCY, FUNDAMENTAL FREQUENCY, POWER, F1 WITH WINDOWS
-[ecg_jane, freq_fundamentaisC, potenciaC, freq_mediasC, F1C] = janelas(ecgc, fa, tj);
+[ecg_jane, freq_fundamentaisC, potenciaC, freq_mediasC, F1C] = windows(ecgc, fa, tj);
 
 % VF ECG - Extract AVERAGE FREQUENCY, FUNDAMENTAL FREQUENCY, POWER, F1 WITH WINDOWS
-[ecg_jane, freq_fundamentaisVF, potenciaVF, freq_mediasVF, F1VF] = janelas(ecgVF, fa, tj);
+[ecg_jane, freq_fundamentaisVF, potenciaVF, freq_mediasVF, F1VF] = windows(ecgVF, fa, tj);
 
 % ECG VF - METRIC N OF TCSC
 [ecgj3tcscVF] = TCSCjan2(ecgVF, fa); % window with 1-second step, i.e., 75% overlap
