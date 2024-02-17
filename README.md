@@ -9,7 +9,7 @@ Nevertheless, the inevitability of these cardiac problems occurring compels soci
 
 ## Goals
 - **Main Goal**: Construction of an algorithm capable of detecting ventricular fibrillation by exploiting ECG characteristics.
-- Study the literature and extract some promising metrics for ventrivular fibrillation.
+- Study the literature and extract some promising metrics for ventricular fibrillation.
 - Reviewing and analyse these metrics independently.
 - Multivariate analysis in order to enhance the discriminatory power of these metrics.
 - Study the influence of metrics by using an unsupervised learning to verify if the data was grouped according to the two different conditions.
@@ -18,5 +18,24 @@ Nevertheless, the inevitability of these cardiac problems occurring compels soci
 
 ## Methods
 
+In this chapter, we will discuss how the entire algorithm was developed, including the following processes: signal filtering, selection and extraction of metrics, selection of time windows for metric calculation, evaluation of metrics, and classification methodology. Figure 1 schematically represents the different phases of the defined algorithm.
+
+![workflow](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/68c425f8-1d85-4973-9b53-257e6c6716b5)
+
+ **Figure 1.**          *Workflow of the algorithm proposed (Preprocess -> feature extraction -> Statistical Analysis(boxplot/Hypothesis test) -> Classification)*
+
+
+
 ### Dataset 
 
+The chosen database for this project is the CU Ventricular Tachyarrhythmia Database available on the Physionet website [^1]:. It comprises 35 ECGs from patients experiencing periods of ventricular tachycardia and ventricular fibrillation. Each ECG was sampled at 250 Hz for approximately 8.5 minutes, corresponding to 127,232 samples. The signals have been pre-processed with a second-order low-pass filter with a cutoff frequency of 70 Hz. Importantly, each subject's ECG includes annotations indicating the electrocardiogram's state, including episodes of ventricular fibrillation.
+
+To ensure a balance between participant quantity and the number of samples with the pathology, a selection process was conducted. Twenty-five subjects were chosen, each with at least 10,000 samples (40 seconds) for each episode of fibrillation and without fibrillation (control group). This approach maintains a considerable number of participants while preserving essential ECG signal information.
+
+### Preprocessing
+
+
+
+
+
+[^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
