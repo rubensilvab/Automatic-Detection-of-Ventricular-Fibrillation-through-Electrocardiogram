@@ -74,6 +74,18 @@ Our database is defined in the time domain since the signal was acquired and rec
 
 <img width="889" alt="fourier" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/7b15fe71-c5cb-4c0e-aa1f-98cf4068adf4">
 
-**Figure 6.**          *Where X(k) represents the N coefficients in the frequency domain and 2𝛱/N, the frequency resolution in radians/sample.*
+**Equation 1.**          *Where X(k) represents the N coefficients in the frequency domain and 2𝛱/N, the frequency resolution in radians/sample.*
+
+<img width="1175" alt="fourierex" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/c6c17059-2fab-4476-b04d-33a523e4092a">
+
+**Figure 6.**          *Presentation of the signals in the time domain on the left side and in the spectral domain on the right side for the control ECG without pathology and the ECG with pathology. Note: VF-Ventricular Fibrillation.*
+
+The analysis of Power Spectral Density (PSD) is a very useful and common procedure in various biomedical signals. One way to estimate this measure is by calculating the square of the absolute value of the Fast Fourier Transform (FFT). There are several methods to calculate and obtain the PSD, all of which are based on the periodogram.
+
+A Welch Power Spectral Density is calculated by averaging periodograms. Firstly, the signal is divided into K segments, each with M samples. However, most of the time these segments have a certain percentage of overlap. Then, each segment is multiplied by a window function w(n) (such as Hamming, Hann, Kaiser, Rectangular, etc.). Only after these steps are applied to a segment, it undergoes Fourier transformation and the respective periodogram calculation.
+
+<img width="856" alt="perio" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/dc145d94-9ece-4c8b-8ac7-e63efb2aee2d">
+
+**Equation 2.** *The average of the periodograms over the total number of segments K.*
 
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
