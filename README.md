@@ -34,6 +34,26 @@ To ensure a balance between participant quantity and the number of samples with 
 
 ### Preprocessing
 
+Preprocessing involves attenuating all irrelevant information from the signal that contaminates and prevents an accurate assessment of it. This irrelevant information is commonly referred to as noise.
+
+#### Electrical network interference
+
+The ECG of an individual is obtained by placing electrodes in specific areas of the human body. These electrodes detect ionic flow within the body by measuring the potential difference between them, making the correct direction and placement crucial for good visualization and ECG acquisition. In most cases, one electrode serves as a reference (ground) and is connected to an amplifier, which amplifies the signal in common mode corresponding to electrical network interference, typically at a fundamental frequency of about 50/60 Hz. To address this, it's necessary to construct a filter to remove these 60 Hz harmonics and artifacts.
+
+Through various studies, it has been proven that the zero-phase in radians per sample corresponds to the frequency that the filter rejects, where the gain is lower. Conversely, the pole-phase defines the frequencies with higher gain. Therefore, to remove interference from the electrical grid, which has a frequency of 60 Hz, it suffices to set the phase in normalized angular frequency (radians per sample) of the zero corresponding to the 60 Hz frequency (Figure 2).
+
+- The calculation performed corresponds to the conversion into normalized angular frequency, which is (60/Fa) * 2π, as w = 2πf. The division by the sampling frequency is due to the signal digitization.
+  
+![mapa_polos_zeros](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/d9a37bbb-9a1f-4b4f-abdc-6f96ff6b66c5)
+
+**Figure 2.**          *Map of poles and zeros of the filter*
+
+![resp_freq_filtro](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/d765d275-c21b-4898-a363-33ef544b4734)
+
+**Figure 3.**          *Frequency reponse of the filter*
+
+
+#### Baseline Correction
 
 
 
