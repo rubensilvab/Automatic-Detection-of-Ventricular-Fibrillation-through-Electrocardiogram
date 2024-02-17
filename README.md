@@ -52,10 +52,19 @@ Through various studies, it has been proven that the zero-phase in radians per s
 
 **Figure 3.**          *Frequency reponse of the filter*
 
+![rede_eletrica](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/dd60cc80-d7d4-4740-a777-25609fe61b93)
+
+**Figure 4.**          *Application of the filter*
+
+Although the difference is not as evident, we can observe a reduction in the small oscillations in the lower graph compared to the upper one, where the signal is not filtered (Figure 4).
 
 #### Baseline Correction
 
+The original ECG often shows low-frequency oscillations in its baseline, possibly due to patient movement or breathing. These oscillations, with frequencies around 0.15 to 0.3 Hz, need removal before analyzing the biosignal. A moving average filter can effectively eliminate this noise. First, average the 200 ms PR interval samples. Then, repeat for subsequent 200 ms samples until the signal's end. Use these averages as input for a similar procedure with 600 ms intervals, continuously until the signal's end.
 
+![correçao_linhadebase](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/b6f0e31d-3f31-4340-bef5-2e4874dabb26)
+**Figure 5.**          *Effect of the moving average filter *
 
+### Feature Extration
 
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
