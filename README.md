@@ -43,20 +43,17 @@ The ECG of an individual is obtained by placing electrodes in specific areas of 
 Through various studies, it has been proven that the zero-phase in radians per sample corresponds to the frequency that the filter rejects, where the gain is lower. Conversely, the pole-phase defines the frequencies with higher gain. Therefore, to remove interference from the electrical grid, which has a frequency of 60 Hz, it suffices to set the phase in normalized angular frequency (radians per sample) of the zero corresponding to the 60 Hz frequency (Figure 2).
 
 - The calculation performed corresponds to the conversion into normalized angular frequency, which is (60/Fa) * 2π, as w = 2πf. The division by the sampling frequency is due to the signal digitization.
+
+  <img width="1171" alt="filtro60" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/c3f36bc4-d38d-47a7-adf0-381a6835a09c">
+
+**Figure 2.**          *Map of poles and zeros of the filter and Frequency reponse*
   
-![mapa_polos_zeros](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/d9a37bbb-9a1f-4b4f-abdc-6f96ff6b66c5)
-
-**Figure 2.**          *Map of poles and zeros of the filter*
-
-![resp_freq_filtro](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/d765d275-c21b-4898-a363-33ef544b4734)
-
-**Figure 3.**          *Frequency reponse of the filter*
 
 ![rede_eletrica](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/dd60cc80-d7d4-4740-a777-25609fe61b93)
 
-**Figure 4.**          *Application of the filter*
+**Figure 3.**          *Application of the filter*
 
-Although the difference is not as evident, we can observe a reduction in the small oscillations in the lower graph compared to the upper one, where the signal is not filtered (Figure 4).
+Although the difference is not as evident, we can observe a reduction in the small oscillations in the lower graph compared to the upper one, where the signal is not filtered (Figure 3).
 
 #### Baseline Correction
 
