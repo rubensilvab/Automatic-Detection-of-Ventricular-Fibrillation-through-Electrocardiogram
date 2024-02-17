@@ -8,7 +8,12 @@ According to the National Health Service (SNS), heart diseases continue to be th
 Nevertheless, the inevitability of these cardiac problems occurring compels society to seek new solutions to prevent further fatal cases. Ventricular fibrillation is an emergency condition where the heart rate is uncontrolled and extremely high. Therefore, this work is based on the construction of an algorithm capable of detecting ventricular fibrillation by exploiting ECG characteristics. 
 
 ## Goals
-- **Description**: Clearly describe the purpose of the repository.
+- **Main Goal**: Construction of an algorithm capable of detecting ventricular fibrillation by exploiting ECG characteristics.
+- Study the literature and extract some promising metrics for ventrivular fibrillation.
+- Reviewing and analyse these metrics independently.
+- Multivariate analysis in order to enhance the discriminatory power of these metrics.
+- Study the influence of metrics by using an unsupervised learning to verify if the data was grouped according to the two different conditions.
+- Implement a supervised learning to automatically identify ventricular fibrillation events.  
 
 
 ## Methods
