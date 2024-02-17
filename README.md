@@ -64,7 +64,7 @@ The original ECG often shows low-frequency oscillations in its baseline, possibl
 
 ![correçao_linhadebase](https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/b6f0e31d-3f31-4340-bef5-2e4874dabb26)
 
-**Figure 5.**          *Effect of the moving average filter *
+**Figure 5.**          *Effect of the moving average filter*
 
 ### Feature Extraction
 
