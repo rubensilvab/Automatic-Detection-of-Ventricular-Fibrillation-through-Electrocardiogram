@@ -85,4 +85,38 @@ A Welch Power Spectral Density is calculated by averaging periodograms. Firstly,
 
 **Equation 2.** *The average of the periodograms over the total number of segments K.*
 
+<img width="1115" alt="period" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/cd0c13f4-e5b8-4b55-9b6b-fb33dc18d48a">
+
+**Figure 7.**          *Power spectral density for patient 1 (cu01). Note: VF-Ventricular Fibrillation.*
+
+The observation and analysis of Figure 7 confirm the initial impressions regarding the Fourier transform magnitude, showing that for this patient, the predominant frequencies in the ECG without anomalies are lower than those in the presence of the disease.
+
+#### Fundamental Frequency
+
+The fundamental frequency is the predominant frequency in a certain signal, meaning it is the strongest and contributes the most to the power density among all the harmonics that make up, in our case, the ECG.
+
+<img width="1136" alt="FundFrq" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/7d3f1d3b-2baf-44df-990c-0adf2241fc15">
+
+**Figure 7.**          *Visualization of the fundamental frequency through the power spectral density for patient 1.*
+
+#### Average Frequency
+
+All frequencies in the signal contribute to its power density, with some contributing more than others. By analyzing these contributions and performing calculations, we find the average ECG frequency. With pwelch, generating Sw and Fw, we normalize Sw to unity, as it represents frequency contributions in power density.
+
+<img width="966" alt="normsw" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/3972ef65-908a-46f0-b712-fd83c0602f1f">
+
+**Equation 3.**          *Normalization of the SW.*
+
+Now, simply multiply each frequency by its respective contribution to power density, then sum all these values together.
+
+#### Power
+
+Since the power spectral density shows us the power that each frequency contributes to the signal, summing the contribution of all frequencies will give us the total power of the analyzed segment. Thus, the total power is nothing more than the area under the entire power spectral density plot.
+
+<img width="1116" alt="power" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/d8c55931-528e-4f59-8a77-1dcd824e1cf0">
+
+**Figure 8.**          *Visualization of the power through the power spectral density for patient 1.*
+
+
+
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
