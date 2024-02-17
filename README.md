@@ -68,4 +68,12 @@ The original ECG often shows low-frequency oscillations in its baseline, possibl
 
 ### Feature Extraction
 
+#### Introduction to spectral domain analysis
+
+Our database is defined in the time domain since the signal was acquired and recorded over time with a sampling frequency of 250 samples per second. However, we know that it is possible to convert and analyze the signal in the spectral domain using the discrete Fourier transform.
+
+<img width="889" alt="fourier" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/7b15fe71-c5cb-4c0e-aa1f-98cf4068adf4">
+
+**Figure 6.**          *Where X(k) represents the N coefficients in the frequency domain and 2𝛱/N, the frequency resolution in radians/sample.*
+
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
