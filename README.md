@@ -117,6 +117,36 @@ Since the power spectral density shows us the power that each frequency contribu
 
 **Figure 8.**          *Visualization of the power through the power spectral density for patient 1.*
 
+#### N(%) - Percentage of samples exceeding a value V0
+
+The two new metrics presented are obtained through an analysis of the ECG in the time domain. In the TCSC algorithm, each 3-second segment of the ECG is analyzed and investigated. Each segment is multiplied by a window defined as:
+
+<img width="1122" alt="w(t)" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/89e15064-6f88-4459-b39c-c1519587137c">
+
+**Equation 4.**          *Window W(t), Ls=3s*
+
+Figure 9 shows the result of multiplying this window by our 3-second segment.
+
+<img width="1121" alt="wxw(t)" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/cd525b6b-dc02-4fe6-8aad-f9d0b0f86be1">
+
+**Figure 9.**          *The effect of using the window w(t) on the first segment of sinus rhythm for patient 1 (cu01).*
+
+The next step is to convert this obtained segment into binary. That is, whenever a sample of our signal surpasses a certain threshold (V0), that sample will have the value of 1; on the contrary, if it does not exceed this threshold, the sample will have the value of 0.
+
+<img width="1161" alt="Nm" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/694f1dd5-dead-424e-b35b-858e4d8e0954">
+
+**Figure 10.**          *Conversion of a normalized ECG segment with sinus rhythm (a) and with ventricular fibrillation (b) into binary after passing through the threshold V0 for patient 1 (cu01)*
+
+
+
+
+
+
+
+
+
+
+
 
 
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
