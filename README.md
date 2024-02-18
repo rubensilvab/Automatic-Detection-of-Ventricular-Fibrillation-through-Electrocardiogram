@@ -137,14 +137,25 @@ The next step is to convert this obtained segment into binary. That is, whenever
 
 **Figure 10.**          *Conversion of a normalized ECG segment with sinus rhythm (a) and with ventricular fibrillation (b) into binary after passing through the threshold V0 for patient 1 (cu01)*
 
+Figure 18 clearly contrasts sinus rhythm and ventricular fibrillation. In (a), the binary signal is faint, with few samples surpassing V0, while in (b), during fibrillation, the binary signal is pronounced, with most samples exceeding V0. Hence, N(%) metric is notably higher during ventricular fibrillation.
 
+#### F1 ratio
 
+The last metric used is perhaps the most unconventional and less common compared to the metrics described earlier. This metric involves creating two graphs from the ECG data. The first graph aligns each sample with the next one, while the second graph aligns each sample with one five steps ahead.
 
+<img width="1156" alt="f1ratio" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/3f35ecda-5fb5-454e-81f9-5a3892662b64">
 
+**Figure 10.**          *ECG graphs of patient 1 with ordinates advanced by 1 sample relative to the abscissas. ECG graphs of patient 1 with ordinates advanced by 5 samples relative to the abscissas.*
 
+With this, the metric represented here is based on extracting features from these graphs, so to facilitate their study, the conversion of these figures into binary images is suggested as a new step in this method.
 
+<img width="1092" alt="f1bin" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/59e6cad7-dfb2-4a04-839a-b81efbb601a8">
 
+**Figure 11.**          *Binary conversion of the ECG graphs of patient 1 with sinus and ventricular fibrillation rhythm, with ordinates advanced by 5 samples relative to the abscissas.*
 
+Thus, metric F1 is obtained by subtracting the ratio of black pixels for the graph with 5 samples advanced (ratio 2) from the ratio of black pixels for the graph with 1 sample advanced (ratio 1).
+
+Through the observation of these images, we once again perceive that areas of the ECG displaying ventricular fibrillation are denser. Therefore, it is expected that metric F1 will be higher for fibrillation areas.
 
 
 
