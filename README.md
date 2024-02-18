@@ -157,6 +157,21 @@ Thus, metric F1 is obtained by subtracting the ratio of black pixels for the gra
 
 Through the observation of these images, we once again perceive that areas of the ECG displaying ventricular fibrillation are denser. Therefore, it is expected that metric F1 will be higher for fibrillation areas.
 
+### Selection of the appropriate window for metric calculation
+
+We adopted a strategy to track metric evolution over time and ensure more precise calculations. By dividing the signals into fragments or windows, we can better analyze signal dynamics, reduce noise effects at boundaries, and mitigate leakage effects. These windows often overlap, providing continuity of information. We created windows with 50% overlap to fragment the signal and calculate metrics for each segment. We debated between window sizes of 7.5s and 10s. Opting for 10s windows ensured computational efficiency while capturing several heartbeats. The rejection of 7.5s windows was due to extraction and calculation challenges. Here's an illustrative example of window construction.
+
+<img width="1163" alt="window" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/03e7ff7a-8995-4286-be13-abcd0b7638db">
+
+**Figure 12.**          *Example of window construction for the ECG without ventricular fibrillation for patient 1 (cu01).*
+
+Therefore, for each window, the described metrics were calculated (except for N%, due to its own window).
+
+### Individual metric evaluation
+
+We'll analyze metric evolution over time for ECGs with and without ventricular fibrillation using boxplots. These graphical tools display data variation, providing key statistical measures and excluding outliers. Additionally, paired Wilcoxon signed rank tests in MATLAB will be conducted to confirm boxplot findings. The test assesses differences between paired samples' medians, with a significance level (α) of 5%. A p-value less than α rejects the null hypothesis, indicating significant differences (our goal).
+
+#### Fundamental Frequency 
 
 
 
