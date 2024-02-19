@@ -173,6 +173,54 @@ We'll analyze metric evolution over time for ECGs with and without ventricular f
 
 #### Fundamental Frequency 
 
+<img width="876" alt="freqfund" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/be938d6d-5dc4-403d-9209-aa31696011f1">
+
+**Figure 13.**          *Boxplot constructed using the medians for all patients of the Fundamental Frequencies and results of the hypothesis test*
+
+Figure 13 suggests higher fundamental frequencies in fibrillation zones, with a median of 4 Hz compared to 2.5 Hz in non-anomalous ECGs. The p-value of 0.0079 (<0.05) from Table 4 confirms this difference, rejecting the hypothesis of equal medians.
+
+#### Average Frequency 
+
+<img width="1116" alt="averfreq" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/89f14d2f-b474-429d-8311-1811f5216069">
+
+**Figure 14.**          *Boxplot constructed using the medians for all patients of the Average Frequencies and results of the hypothesis test*
+
+Figure 14 shows considerable overlap in mean frequency values across different zones studied. The analysis indicates no significant difference in medians (p-value > 0.05), rendering this metric unsuitable for discrimination in the project. Thus, we discard this metric from the classification process. 
+
+#### Power 
+
+<img width="1143" alt="power" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/ec550341-ddf6-459e-99a7-d9bd346ca26d">
+
+**Figure 15.**          *Boxplot constructed using the medians for all patients of the Power and results of the hypothesis test*
+
+Figure 15 shows that the metric is not as linear as intended, still overlaps between conditions. Fibrillation ECGs show notably higher power values. P-value (<0.05) rejects equal medians hypothesis. While not ideal for discrimination, this metric may aid.
+
+#### N(%)
+
+<img width="1119" alt="n" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/5fb05fe5-a93c-4dd8-ab3a-b855ab087edf">
+
+**Figure 16.**          *Boxplot constructed using the medians for all patients of the N(%) and results of the hypothesis test*
+
+As expected, Figure 16 shows significantly higher N(%) values for fibrillation zones with no overlap. This was predictable, as ventricular fibrillation episodes exhibit numerous oscillations compared to sinus rhythm. The p-value is much lower than 0.05, suggesting unequal medians for both cardiac conditions. Thus, this metric appears promising for cardiac pathology discrimination.
+
+#### F1 Ratio
+
+<img width="1133" alt="f1_ratio" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/13c1ebb3-2231-4ad6-a71e-ef9ccdc0fdb4">
+
+**Figure 17.**          *Boxplot constructed using the medians for all patients of the F1 metric and results of the hypothesis test*
+
+Figure 17 analysis reveals minimal overlap between ECGs with and without ventricular fibrillation. Table confirms this, with a p-value much lower than 0.05, indicating different medians for both conditions. Consequently, metrics N(%) and F1 may be crucial for this project's primary objective, given their significantly lower p-values compared to others.
+
+
+
+
+
+
+
+
+
+
+
 
 
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
