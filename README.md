@@ -244,10 +244,9 @@ Following the algorithm's development, we identified key metrics for discriminat
 
 <img width="1115" alt="rsul" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/b0d52e8a-69c1-4269-b06d-12440e5c0124">
 
-From the analysis of the presented Table 1, it's immediately apparent that power is entirely irrelevant as a metric when the other three metrics are present to aid in group formation.
-
 **Table 1.**          *Results only for the use of the k-means model in unsupervised learning. Note: FF - fundamental frequency, Apenas - Only, Sem - without.*
 
+From the analysis of the presented Table 1, it's immediately apparent that power is entirely irrelevant as a metric when the other three metrics are present to aid in group formation.
 Ultimately, two options emerge. N(%), F1, and FF together yield 90% accuracy, while N(%) alone sacrifices 2% accuracy for 100% sensitivity in detecting ventricular fibrillation, compared to 88% with all three metrics. Thus, relying solely on N(%) ensures 100% accuracy in detecting ventricular fibrillation, proving more efficient and computationally faster.
 
 ### Supervised Learning
