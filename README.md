@@ -211,16 +211,62 @@ As expected, Figure 16 shows significantly higher N(%) values for fibrillation z
 
 Figure 17 analysis reveals minimal overlap between ECGs with and without ventricular fibrillation. Table confirms this, with a p-value much lower than 0.05, indicating different medians for both conditions. Consequently, metrics N(%) and F1 may be crucial for this project's primary objective, given their significantly lower p-values compared to others.
 
+### Classification
 
+The all process aimed to select metrics for discriminating between ventricular fibrillation and its absence. At this stage, we know that among all the selected metrics, average frequency is the one that does not proceed to classification. Two approaches, Unsupervised and Supervised Learning, are used for classification.
 
+#### Unsupervised Approach 
 
+In this final step, K-means model was employed to group ECG segments with and without fibrillation into distinct classes. We aggregated metrics into a [50x4] matrix, representing 25 participants with 2 ECG segments each. The model identifies two groups based on metrics' similarities. We aim to assess each metric's impact on distinguishing between groups by varying the dataset and using Min-Max Scaling for normalization.
 
+<img width="1134" alt="metricev" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/9ecf75bd-25d2-46a4-9aab-9c4bfe9d4f39">
 
+**Figure 18.**          *Confusion matrix for the K-means model when using all metrics.*
 
+Two key concepts in result evaluation for machine learning models are accuracy, the percentage of correct predictions, and sensitivity, the percentage of correctly predicted positive cases (ECGs with fibrillation). In clinical cases, it's more crucial for our model to correctly predict fibrillation to prevent and apply defibrillation.
 
+#### Supervised Learning
 
+In supervised learning, unlike unsupervised learning, the output of our dataset is known in advance. We aim to find a relationship between the selected metrics and the ECG state (ventricular fibrillation or not). We used the Random Forest model via Kaggle's Python server, working with non-normalized metrics, as the model is not sensitive to data normalization.
 
+Additionally, out of the 50 ECG segments analyzed, the program selects 37 for training and the remaining 13 for validation. The results presented in the next chapter refer to the validation data.
+In order to better evaluate our results, we adopted the strategy of running our classifier 15 times (with different train/validation data distributtion) and recording the mean and standard deviation of the results obtained. Below are two illustrative examples of the confusion matrix returned by the Python algorithm used.
 
+<img width="1136" alt="exsl" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/b1117fe9-3580-4cf0-920a-d56f79845c18">
+
+**Figure 19.**          *Results obtained for the first usage (a) and second usage (b) of the random forest model when using all metrics.*
+
+## Results 
+
+Following the algorithm's development, we identified key metrics for discriminating between sinus rhythm and ventricular fibrillation. Using these metrics, we explored Unsupervised and Supervised Learning methods. In this chapter, we present and discuss the results obtained.
+
+### Unsupervised Learning
+
+<img width="1115" alt="rsul" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/b0d52e8a-69c1-4269-b06d-12440e5c0124">
+
+From the analysis of the presented Table 1, it's immediately apparent that power is entirely irrelevant as a metric when the other three metrics are present to aid in group formation.
+
+**Table 1.**          *Results only for the use of the k-means model in unsupervised learning. Note: FF - fundamental frequency, Apenas - Only, Sem - without.*
+
+Ultimately, two options emerge. N(%), F1, and FF together yield 90% accuracy, while N(%) alone sacrifices 2% accuracy for 100% sensitivity in detecting ventricular fibrillation, compared to 88% with all three metrics. Thus, relying solely on N(%) ensures 100% accuracy in detecting ventricular fibrillation, proving more efficient and computationally faster.
+
+### Supervised Learning
+
+<img width="1128" alt="rssl" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/98020c37-6f49-4b27-bece-0ca4c053a807">
+
+**Table 2.**          *Results from using the random forest model with all metrics and without using power for classification.*
+
+Through Table 2 analysis, we find overall satisfactory results, with about 88% accuracy for both scenarios. Using all metrics, sensitivity reaches 92%, a 5% advantage over excluding power. While power has minimal impact, it aids fibrillation detection and shouldn't be overlooked. Additionally, the distinction between unsupervised and supervised learning approaches is apparent, with power being irrelevant in the former.
+
+## Conclusion
+
+- This study devised a novel algorithm for automatically detecting ventricular fibrillation (VF) using electrocardiogram (ECG) signals. Initially, signal preprocessing was conducted to enhance signal quality. Subsequently, five ECG characteristics were extracted through both temporal and spectral analyses, guided by existing literature. The constructed boxplots and hypothesis testing facilitated the evaluation of these metrics' discriminatory power for pathological conditions. Notably, the metric related to mean frequency was deemed inadequate and thus discarded, while metrics F1 and N(%) emerged as notable discriminators.
+
+- For classification purposes, two distinct approaches were employed: Unsupervised Learning with the k-means model and Supervised Learning with random forests. In the Unsupervised Learning phase, the k-means model utilized a clustering technique to evaluate the impact of each metric on cluster formation. Results indicated that the N(%) metric played the most significant role, achieving 100% sensitivity when used alone, consistently grouping ECGs with pathology.
+
+- In contrast, Supervised Learning with the random forests model showed promising results, achieving 92% sensitivity when utilizing all metrics. Notably, the model's performance improved when using all metrics together compared to the Unsupervised Learning approach.
+
+- Overall, the study's findings were highly satisfactory and aligned with existing literature. Additionally, the study elucidated the advantages and disadvantages of using metrics together or separately, providing valuable insights for future research endeavors leveraging ECG characteristics for medical diagnosis and monitoring.
 
 
 [^1]: Goldberger, A., L. Amaral, L. Glass, J. Hausdorff, P. C. Ivanov, R. Mark, J. E. Mietus, G. B. Moody, C. K. Peng, and H. E. Stanley. "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220." (2000).
