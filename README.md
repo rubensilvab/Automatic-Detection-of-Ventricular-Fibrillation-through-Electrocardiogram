@@ -34,7 +34,7 @@ To ensure a balance between participant quantity and the number of samples with 
 
 ### Preprocessing
 
-Preprocessing involves attenuating all irrelevant information from the signal that contaminates and prevents an accurate assessment of it. This irrelevant information is commonly referred to as noise. Code implemented: [preprocess.m](preprocess.m) 
+Preprocessing involves attenuating all irrelevant information from the signal that contaminates and prevents an accurate assessment of it. This irrelevant information is commonly referred to as noise. Code implemented: [pre_process.m](pre_process.m). 
 
 #### Electrical network interference
 
@@ -159,7 +159,7 @@ Through the observation of these images, we once again perceive that areas of th
 
 ### Selection of the appropriate window for metric calculation
 
-We adopted a strategy to track metric evolution over time and ensure more precise calculations. By dividing the signals into fragments or windows, we can better analyze signal dynamics, reduce noise effects at boundaries, and mitigate leakage effects. These windows often overlap, providing continuity of information. We created windows with 50% overlap to fragment the signal and calculate metrics for each segment. We debated between window sizes of 7.5s and 10s. Opting for 10s windows ensured computational efficiency while capturing several heartbeats. The rejection of 7.5s windows was due to extraction and calculation challenges. Here's an illustrative example of window construction.
+We adopted a strategy to track metric evolution over time and ensure more precise calculations. By dividing the signals into fragments or windows, we can better analyze signal dynamics, reduce noise effects at boundaries, and mitigate leakage effects. These windows often overlap, providing continuity of information. We created windows with 50% overlap to fragment the signal and calculate metrics for each segment (Code implemented: [windows.m](windows.m)). We debated between window sizes of 7.5s and 10s. Opting for 10s windows ensured computational efficiency while capturing several heartbeats. The rejection of 7.5s windows was due to extraction and calculation challenges. Here's an illustrative example of window construction.
 
 <img width="1163" alt="window" src="https://github.com/rubensilvab/Automatic-Detection-of-Ventricular-Fibrillation-through-Electrocardiogram/assets/130314085/03e7ff7a-8995-4286-be13-abcd0b7638db">
 
