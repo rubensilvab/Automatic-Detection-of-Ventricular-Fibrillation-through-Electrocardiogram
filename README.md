@@ -34,7 +34,7 @@ To ensure a balance between participant quantity and the number of samples with 
 
 ### Preprocessing
 
-Preprocessing involves attenuating all irrelevant information from the signal that contaminates and prevents an accurate assessment of it. This irrelevant information is commonly referred to as noise.
+Preprocessing involves attenuating all irrelevant information from the signal that contaminates and prevents an accurate assessment of it. This irrelevant information is commonly referred to as noise. Code implemented: [preprocess.m](preprocess.m) 
 
 #### Electrical network interference
 
